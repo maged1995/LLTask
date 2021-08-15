@@ -15,7 +15,7 @@ services:
       context: ./back-end
       dockerfile: ./Dockerfile
     restart: always
-    command: bash -c "cd api/back-end && python3 manage.py wait_for_database && python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:3000"
+    command: bash -c "cd api/back-end && python3 check_on_db.py && python3 manage.py wait_for_database &&  python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:3000"
     # command: bash -c "cd api/back-end && python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py migrate --database=testing && python3 manage.py runserver 0.0.0.0:3000"
     env_file:
       - ./.env
