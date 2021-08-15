@@ -3,12 +3,12 @@ from receipt_processor.models import Receipt, Block
 from receipt_processor.serializers import ReceiptSerializer
 
 def process (request):
-    if request.FILES['receipt_doc'].content_type== 'text/plain':
+    if request.FILES['receipt_doc'].content_type == 'text/plain':
         newdoc = Receipt.objects.create(receipt_doc=request.FILES['receipt_doc'])
         newdoc.save()
+        
         l = []
-
-        sc = ec = sr = er = None
+        sc = ec = sr = er = None    
 
         with open(newdoc.receipt_doc.name, 'r') as reader:
             for index, line in enumerate(reader.readlines()):

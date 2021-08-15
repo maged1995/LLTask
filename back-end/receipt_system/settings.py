@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'receipt_processor.apps.ReceiptProcessorConfig',
     'django_probes',
-    'receipt_processor.tests'
+    'tests'
 ]
 
 MIDDLEWARE = [
@@ -86,7 +86,7 @@ DATABASES = {
         'PASSWORD': 'mypassword',
         'HOST': 'db',
         'PORT': '5432',
-    }
+    },
 }
 
 

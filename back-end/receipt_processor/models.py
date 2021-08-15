@@ -10,5 +10,3 @@ class Block(models.Model):
     end_row = models.IntegerField()
     end_col = models.IntegerField()
     receipt = models.ForeignKey(Receipt, related_name='blocks', on_delete=models.CASCADE)
-    class Meta:
-        unique_together = ['receipt']
